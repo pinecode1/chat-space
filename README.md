@@ -5,7 +5,6 @@
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|groupe_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :comments
 - has_many :users_groups
@@ -14,9 +13,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupe_name|text|null: false|
-|groupe_user|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :comments
 - has_many :users_groups
@@ -34,7 +31,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text|
+|image|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
