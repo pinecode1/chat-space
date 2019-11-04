@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+
 .side-bar {
   box-sizing: border-box;
   color: $white;
@@ -13,6 +20,7 @@
       font-weight: bold;
     }
     &__lists {
+      height: 100%;
       display: inline-block;
       float: right;
       .list {
@@ -27,17 +35,22 @@
 
   .groups {
     background-color: $side_blue_light;
+    width: 300px;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    
+    overflow: scroll;
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
       &__name {
         font-size: $side_group_name;
+        color: #fff;
       }
       &__message {
         font-size: $side_group_message;
         margin-top: 5px;
+        color: #fff;
       }
     }
   }
