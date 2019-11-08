@@ -58,12 +58,14 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(messages) {
         var insertHTML = '';
-        messages.forEach(function(message){
-          insertHTML = buildHTML(message)
-        });
-         $('.messages').append(insertHTML);
-         $('form')[0].reset();
-         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        if (messages.length != 0 ) {
+          messages.forEach(function(message){
+            insertHTML = buildHTML(message)
+          });
+           $('.messages').append(insertHTML);
+           $('form')[0].reset();
+           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        }
       })
       .fail(function() {
         alert('error');
